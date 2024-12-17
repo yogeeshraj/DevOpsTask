@@ -22,9 +22,11 @@ jobs:
       
       - name: Install dependencies
         run: npm install
+        working-directory: ./static_website
       
       - name: Run tests
         run: npm test
+        working-directory: ./static_website
 
   deploy:
     runs-on: ubuntu-latest
