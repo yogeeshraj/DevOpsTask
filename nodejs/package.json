@@ -1,3 +1,14 @@
-"scripts": {
+{
+  "name": "hello-world-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js server that returns Hello World",
+  "main": "server.js",
+  "scripts": {
     "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "author": "",
+  "license": "ISC"
 }
