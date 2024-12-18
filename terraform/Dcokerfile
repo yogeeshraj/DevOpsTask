@@ -1,0 +1,7 @@
+FROM python:3.9
+
+RUN pip install boto3
+
+COPY python_script.py /app/python_script.py
+
+CMD ["python", "/app/python_script.py"]
