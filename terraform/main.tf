@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "example_bucket" {
-  bucket = "example-bucket"
+  bucket = "yogi-bucket-${random_id.unique_id.hex}""
+}
+
+resource "random_id" "unique_id" {
+  byte_length = 8
 }
 
 resource "aws_iam_role" "lambda_exec_role" {
