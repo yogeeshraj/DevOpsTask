@@ -19,7 +19,7 @@ jobs:
       with:
         aws_access_key_id: ${{ secrets.TERRAFORMID }}
         aws_secret_access_key: ${{ secrets.TERRAFORMSECRET }}
-        aws_region: us-east-1
+        aws_region: us-west-2
 
     - name: Install Terraform
       uses: hashicorp/setup-terraform@v1
@@ -31,10 +31,18 @@ jobs:
       working-directory: terraform  
 
     - name: Terraform Plan
+      env: 
+         AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFORMID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.TERRAFORMSECRET }}
+         AWS_REGION: us-west-2
       run: terraform plan
       working-directory: terraform  
 
     - name: Terraform Apply
+      env: 
+         AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFORMID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.TERRAFORMSECRET }}
+         AWS_REGION: us-west-2
       run: terraform apply -auto-approve
       working-directory: terraform  
 
