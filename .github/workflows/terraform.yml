@@ -28,6 +28,10 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
+      env: 
+         AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFORMID }}
+         AWS_SECRET_ACCESS_KEY: ${{ secrets.TERRAFORMSECRET }}
+         AWS_REGION: us-west-2
       working-directory: terraform  
 
     - name: Terraform Plan
